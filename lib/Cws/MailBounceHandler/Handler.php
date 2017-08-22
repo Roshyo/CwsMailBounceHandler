@@ -70,6 +70,7 @@ class Handler
     const CAT_OVERSIZE = 'oversize';
     const CAT_TIMEOUT = 'timeout';
     const CAT_UNKNOWN = 'unknown';
+	const CAT_UNKNOWN_USER = 'unknown_user';
     const CAT_UNRECOGNIZED = 'unrecognized';
     const CAT_USER_REJECT = 'user_reject';
     const CAT_WARNING = 'warning';
@@ -2102,6 +2103,11 @@ class Handler
                 'remove'     => false,
                 'bounceType' => self::BOUNCE_SOFT,
             ),
+            array(
+                'name'       => self::CAT_UNKNOWN_USER,
+                'remove'     => true,
+                'bounceType' => self::BOUNCE_HARD
+            )
         );
 
         foreach ($ruleCatsData as $ruleCatData) {
@@ -2130,10 +2136,10 @@ class Handler
             '4.4.7' => self::CAT_TIMEOUT,
             '4.5.1' => self::CAT_COMMAND_REJECT,
             '5.0.0' => self::CAT_UNKNOWN,
-            '5.1.1' => self::CAT_UNKNOWN,
-            '5.1.2' => self::CAT_UNKNOWN,
-            '5.1.3' => self::CAT_UNKNOWN,
-            '5.1.4' => self::CAT_UNKNOWN,
+            '5.1.1' => self::CAT_UNKNOWN_USER,
+            '5.1.2' => self::CAT_UNKNOWN_USER,
+            '5.1.3' => self::CAT_UNKNOWN_USER,
+            '5.1.4' => self::CAT_UNKNOWN_USER,
             '5.1.6' => self::CAT_UNKNOWN,
             '5.1.8' => self::CAT_ANTISPAM,
             '5.2.0' => self::CAT_FULL,
